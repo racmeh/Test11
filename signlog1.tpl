@@ -48,7 +48,7 @@ $(document).ready(function() {
 				$('#stat1').val('');
             });
 			
-           ws.onclose = function()	//Defining what happens when web socket connection is closed
+           wss.onclose = function()	//Defining what happens when web socket connection is closed
             {
 				$('#messages').append('<li>' + "Connection is closed..." + '</li>'); 
             }

@@ -21,15 +21,15 @@
                 }
             }
 			
-            ws = new WebSocket('ws://localhost:8080/ws_adm');	//Setting up a web socket on the mentioned url
+            wss = new WebSocket('https://geomap001.herokuapp.com:8080/ws_adm');	//Setting up a web socket on the mentioned url
 			$('#btn').hide()//Hiding the refresh button
-            ws.onopen = function(evt) {		//Function to define what happens when web socket is opened
+            wss.onopen = function(evt) {		//Function to define what happens when web socket is opened
                 $('#messages').append('<li>Connected to server</li>');	//Message is appended to the given section on web socket opening
                 
             }
 			
             var c1=0;var n1=0;var n2=0;var str="";var i=0;
-            ws.onmessage = function(evt) {	//Defines what happens on receiving a message
+            wss.onmessage = function(evt) {	//Defines what happens on receiving a message
 				str=evt.data;	//Taking the data out of the object send by server
 				for(i=0;i<str.length;i++){
 					if(str.charAt(i)==':'){
@@ -59,11 +59,11 @@
             }
 			
             $('#btn').click(function(){		//Defines what happens when Refresh is clicked
-				ws.send("Send");	//Sending a message to server using websocket
+				wss.send("Send");	//Sending a message to server using websocket
             });
 			
             setInterval(function(){$('#btn').trigger("click")},5000);	//Setting a interval after a button is clicked which refreshes the data
-            ws.onclose = function()		//It defines what happens when the web socket connection is closed
+            wss.onclose = function()		//It defines what happens when the web socket connection is closed
             {
 				$('#messages').append('<li>' + "Connection is closed..." + '</li>'); 
             }

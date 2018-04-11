@@ -1,1 +1,6 @@
-
+Bottle==0.13
+Bottle-Sockets==0.13
+gevent==1.0.2
+gevent-websocket==0.9.5
+greenlet==0.4.9
+gunicorn==19.4.5

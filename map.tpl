@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
 <title>Mapify1.com</title>
   <meta charset="utf-8">
@@ -117,7 +117,7 @@ $(document).ready(function() {
                 }
             }
 			
-            ws = new WebSocket('ws://localhost:8080/websocket');	//Setting up a web socket on the mentioned url
+            wss = new WebSocket('https://geomap001.herokuapp.com:8080/websocket');	//Setting up a web socket on the mentioned url
 			var mymap = L.map('mapid').setView([21.0856225,78.9879812], 4);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGV2aW5jbyIsImEiOiJjamZsbGhoam8waDYyMzNuN3gyNHZhbzBpIn0.yPx2G5Rcafz4OeDvY3J13w', {
@@ -167,11 +167,11 @@ function onMapClick(e) {
 }
 
 mymap.on('click', onMapClick);
-            ws.onopen = function(evt) {//Defining what happens when socket connection opens
+            wss.onopen = function(evt) {//Defining what happens when socket connection opens
                 $('#messages').append('<li>Connected to server</li>');
            }
 		   
-           ws.onmessage = function(evt) {	//Defining what happens when message is received
+           wss.onmessage = function(evt) {	//Defining what happens when message is received
 		        var s='',s1='',s2='',i=0,c=0,c1=0,s3='',cp1='',pos1=0.0,pos2=0.0;
 				s=evt.data;
 				
@@ -376,38 +376,38 @@ mymap.on('click', onMapClick);
 				console.log("s2 is "+s2);
 				if(s1==='32.1976097'){
 		        marker.setPopupContent(marker.getPopup().getContent()+s2);
-				ws.send(s1);
-				ws.send(marker.getPopup().getContent());
+				wss.send(s1);
+				wss.send(marker.getPopup().getContent());
 				}
 				if(s1==='12.9788139'){
 		        marker1.getPopup().setContent(marker1.getPopup().getContent()+s2);
-				ws.send(s1);
-				ws.send(marker1.getPopup().getContent());
+				wss.send(s1);
+				wss.send(marker1.getPopup().getContent());
 				}
 				if(s1==='21.0856225'){
 		        marker2.getPopup().setContent(marker2.getPopup().getContent()+s2);
-				ws.send(s1);
-				ws.send(marker2.getPopup().getContent());
+				wss.send(s1);
+				wss.send(marker2.getPopup().getContent());
 				}
 				if(s1==='30.690889'){
 		        marker3.getPopup().setContent(marker3.getPopup().getContent()+s2);
-				ws.send(s1);
-				ws.send(marker3.getPopup().getContent());
+				wss.send(s1);
+				wss.send(marker3.getPopup().getContent());
 				}
 				if(s1==='28.6377383'){
 		        marker4.getPopup().setContent(marker4.getPopup().getContent()+s2);
-				ws.send(s1);
-				ws.send(marker4.getPopup().getContent());
+				wss.send(s1);
+				wss.send(marker4.getPopup().getContent());
 				}
 				if(s1==='18.9388227'){
 		        marker5.getPopup().setContent(marker5.getPopup().getContent()+s2);
-				ws.send(s1);
-				ws.send(marker5.getPopup().getContent());
+				wss.send(s1);
+				wss.send(marker5.getPopup().getContent());
 				}
 				if(s1==='22.5646081'){
 		        marker6.getPopup().setContent(marker6.getPopup().getContent()+s2);
-				ws.send(s1);
-				ws.send(marker6.getPopup().getContent());
+				wss.send(s1);
+				wss.send(marker6.getPopup().getContent());
 				}
 				}
            }   
@@ -491,22 +491,22 @@ mymap.on('zoomend' , function (e) {
 });
 		   
 		   $('#btn').click(function(){	//Defining what happens when the button is clicked
-				ws.send($('#ipt1').val());	//sending message to server
+				wss.send($('#ipt1').val());	//sending message to server
 				var a=$('#ipt3').val();
-				ws.send(a);
+				wss.send(a);
 				console.log("                                         msg2 is"+$('#ipt3').val());
-				ws.send($('#ipt4').val());
-				ws.send($('#ipt5').val());
-				ws.send($('#ipt6').val());
-				ws.send($('#ipt7').val());
-				ws.send($('#ipt8').val());
-				ws.send($('#ipt9').val());
-				ws.send($('#ipt10').val());
-				ws.send($('#ipt11').val());
-				ws.send($('#ipt12').val());
-				ws.send($('#ipt13').val());
-				ws.send($('#ipt14').val());
-				ws.send($('#ipt15').val());
+				wss.send($('#ipt4').val());
+				wss.send($('#ipt5').val());
+				wss.send($('#ipt6').val());
+				wss.send($('#ipt7').val());
+				wss.send($('#ipt8').val());
+				wss.send($('#ipt9').val());
+				wss.send($('#ipt10').val());
+				wss.send($('#ipt11').val());
+				wss.send($('#ipt12').val());
+				wss.send($('#ipt13').val());
+				wss.send($('#ipt14').val());
+				wss.send($('#ipt15').val());
 				$('#ipt3').val('');
 				$('#ipt4').val('');
 				$('#ipt5').val('');
@@ -522,10 +522,10 @@ mymap.on('zoomend' , function (e) {
 				$('#ipt15').val('');
             });
 			$('#btn3').click(function(){
-				ws.send("Offline1234abc5678def90ghij");	//Sending a unique string to determine if Signout is pressed
+				wss.send("Offline1234abc5678def90ghij");	//Sending a unique string to determine if Signout is pressed
             });
-			setTimeout(function(){ ws.close(); }, 3600000);	//Timeout function to expire the session in an hour
-		            ws.onclose = function()	//Defining what happens when web socket connection is closed
+			setTimeout(function(){ wss.close(); }, 3600000);	//Timeout function to expire the session in an hour
+		            wss.onclose = function()	//Defining what happens when web socket connection is closed
             {
 				$('#messages').append('<li>' + "Connection is closed..." + '</li>'); 
             }

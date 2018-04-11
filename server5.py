@@ -10,23 +10,23 @@ users=[]#Making an empty list
 
 @route('/')#Defining a default route
 def logreg():
-    return template('signlog1')#returning a template when the route is entered
+    return template('index.html')#returning a template when the route is entered
 
 @route('/signup')#Defining a named route
 def sign():
-    return template('signlog1')
+    return template('index.html')
 
 @route('/login')
 def log():
-    return template('signlog1')
+    return template('index.html')
 
 @route('/map')
 def usr():
-    return template('map')
+    return template('map.html')
 	
 @route('/adm')
 def adm1():
-    return template('adm1')
+    return template('adm1.html')
 
 usr=[]
 dict={}#Defining an empty dictionary

@@ -13,7 +13,7 @@ $(document).ready(function() {
                 }
             }
 			
-            wss = new WebSocket('https://geomap001.herokuapp.com:8080/ws_signlog');	//Setting up a web socket on the mentioned url
+            wss = new WebSocket('https://geomap001.herokuapp.com/ws_signlog');	//Setting up a web socket on the mentioned url
 			$('#redirect').hide();	//Hiding redirect button
             wss.onopen = function(evt) {//Defining what happens when socket connection opens
                 $('#messages').append('<li>Connected to server</li>');
@@ -76,7 +76,7 @@ $(document).ready(function() {
 	<input id="pwd1" type="text" placeholder="Password" name="pwd1">
 	<br/><br/>
 	<button id="btn1">Login</button><br/><br/>
-	<input id="redirect" type="button" onclick="location.href='https://geomap001.herokuapp.com:8080/map';" value="Redirect" /> 	<!-- Redirecting to another url on clicking the button -->
+	<input id="redirect" type="button" onclick="location.href='https://geomap001.herokuapp.com/map';" value="Redirect" /> 	<!-- Redirecting to another url on clicking the button -->
 	<div id="messages"></div>
 	
 </body>

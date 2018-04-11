@@ -176,4 +176,4 @@ def refresh():
     db.usrinftst2.drop()#Clearing an entire collection
     db.usrinftst3.drop()#Clearing an entire collection
 
-run(host='https://geomap001.herokuapp.com/', port=8080, server=GeventWebSocketServer)#Running the server and listening on the given port of the mentioned url
+run(host='https://geomap001.herokuapp.com', port=8080, server=GeventWebSocketServer)#Running the server and listening on the given port of the mentioned url

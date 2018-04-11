@@ -117,7 +117,7 @@ $(document).ready(function() {
                 }
             }
 			
-            wss = new WebSocket('https://geomap001.herokuapp.com:8080/websocket');	//Setting up a web socket on the mentioned url
+            wss = new WebSocket('https://geomap001.herokuapp.com/websocket');	//Setting up a web socket on the mentioned url
 			var mymap = L.map('mapid').setView([21.0856225,78.9879812], 4);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGV2aW5jbyIsImEiOiJjamZsbGhoam8waDYyMzNuN3gyNHZhbzBpIn0.yPx2G5Rcafz4OeDvY3J13w', {

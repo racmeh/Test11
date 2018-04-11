@@ -13,24 +13,24 @@ $(document).ready(function() {
                 }
             }
 			
-            ws = new WebSocket('ws://localhost:8080/ws_signlog');	//Setting up a web socket on the mentioned url
+            wss = new WebSocket('https://geomap001.herokuapp.com:8080/ws_signlog');	//Setting up a web socket on the mentioned url
 			$('#redirect').hide();	//Hiding redirect button
-            ws.onopen = function(evt) {//Defining what happens when socket connection opens
+            wss.onopen = function(evt) {//Defining what happens when socket connection opens
                 $('#messages').append('<li>Connected to server</li>');
                 
            }
 		   
-           ws.onmessage = function(evt) {	//Defining what happens when message is received
+           wss.onmessage = function(evt) {	//Defining what happens when message is received
 				$('#messages').append('<li>' + evt.data + '</li>');	//Appending the message to the module
 				if(evt.data=="Login successfull, redirecting..."||evt.data=="Signup successfull, redirecting...")	//Checking for login or Signup
 				$('#redirect').trigger('click');	//Triggering click of a button
            }
 		   
            $('#btn').click(function(){	//Defining what happens on the click of the button with id=btn, this is for Signup
-				ws.send($('#usrnm').val());	//Sending username to server to be stored in database
-				ws.send($('#usrid').val());
-				ws.send($('#pwd').val());
-				ws.send('Signup');	//Sending status to server to be stored in database, status here will be Signup
+				wss.send($('#usrnm').val());	//Sending username to server to be stored in database
+				wss.send($('#usrid').val());
+				wss.send($('#pwd').val());
+				wss.send('Signup');	//Sending status to server to be stored in database, status here will be Signup
 				$('#usrnm').val('');
 				$('#usrid').val('');
 				$('#pwd').val('');
@@ -38,10 +38,10 @@ $(document).ready(function() {
             });
 			
            $('#btn1').click(function(){	//Defining what happens on the click of the button with id=btn, this is for Login
-				ws.send($('#usrnm1').val());
-				ws.send($('#usrid1').val());
-				ws.send($('#pwd1').val());
-				ws.send($('Login').val());	//Status will be Login
+				wss.send($('#usrnm1').val());
+				wss.send($('#usrid1').val());
+				wss.send($('#pwd1').val());
+				wss.send($('Login').val());	//Status will be Login
 				$('#usrnm1').val('');
 				$('#usrid1').val('');
 				$('#pwd1').val('');
@@ -76,7 +76,7 @@ $(document).ready(function() {
 	<input id="pwd1" type="text" placeholder="Password" name="pwd1">
 	<br/><br/>
 	<button id="btn1">Login</button><br/><br/>
-	<input id="redirect" type="button" onclick="location.href='http://localhost:8080/map';" value="Redirect" /> 	<!-- Redirecting to another url on clicking the button -->
+	<input id="redirect" type="button" onclick="location.href='https://geomap001.herokuapp.com:8080/map';" value="Redirect" /> 	<!-- Redirecting to another url on clicking the button -->
 	<div id="messages"></div>
 	
 </body>

@@ -21,7 +21,7 @@
                 }
             }
 			
-            wss = new WebSocket('https://geomap001.herokuapp.com:8080/ws_adm');	//Setting up a web socket on the mentioned url
+            wss = new WebSocket('https://geomap001.herokuapp.com/ws_adm');	//Setting up a web socket on the mentioned url
 			$('#btn').hide()//Hiding the refresh button
             wss.onopen = function(evt) {		//Function to define what happens when web socket is opened
                 $('#messages').append('<li>Connected to server</li>');	//Message is appended to the given section on web socket opening

@@ -32,6 +32,18 @@
 	width:175px;  
     height:30px;
 	}
+	#ipt4{
+	width:175px;  
+    height:30px;
+	}
+	#ipt6{
+	width:175px;  
+    height:30px;
+	}
+	#ipt11{
+	width:175px;  
+    height:30px;
+	}
 	</style>
 </head>
 
@@ -75,14 +87,53 @@
 		</select>
 		<br/><br/>
 		&nbsp;<input id="ipt3" type="number" name="Match_num" placeholder="Match number"><br/><br/>
-		&nbsp;<input id="ipt4" type="text" name="Stage" placeholder="Stage"><br/><br/>
+		&nbsp;<select id="ipt4" name="Stage">
+			<option value="Group">Group</option>
+			<option value="Super 10">Super 10</option>
+			<option value="Semifinal">Semifinal</option>
+			<option value="Final">Final</option>
+		</select><br/><br/>
 		&nbsp;<input id="ipt5" type="text" name="Date" placeholder="DD/MM/YY format"><br/><br/>
-		&nbsp;<input id="ipt6" type="text" name="1st_bat_team" placeholder="1st bat team"><br/><br/>
+		&nbsp;<select id="ipt6" name="1st_bat_team">
+			<option value="IND">India</option>
+			<option value="AUS">Australia</option>
+			<option value="ENG">England</option>
+			<option value="NZ">New Zealand</option>
+			<option value="PAK">Pakistan</option>
+			<option value="SA">South Africa</option>
+			<option value="SL">Sri Lanka</option>
+			<option value="WI">West Indies</option>
+			<option value="BAN">Bangladesh</option>
+			<option value="ZIM">Zimbabwe</option>
+			<option value="SC">Scotland</option>
+			<option value="NTH">Netherlands</option>
+			<option value="IR">Ireland</option>
+			<option value="HK">Hong Kong</option>
+			<option value="AFG">Afghanistan</option>
+			<option value="OM">Oman</option>
+		</select><br/><br/>
 		&nbsp;<input id="ipt7" type="number" name="1st_bat_team_runs" placeholder="1st bat team runs"><br/><br/>
 		&nbsp;<input id="ipt8" type="number" name="1st_bat_team_wickets" placeholder="1st bat team wickets"><br/><br/>
 		&nbsp;<input id="ipt9" type="number" name="1st_bat_team_overs" placeholder="1st bat team overs"><br/><br/>
 		&nbsp;<input id="ipt10" type="text" name="1st_bat_team_result" placeholder="1st bat team result"><br/><br/>
-		&nbsp;<input id="ipt11" type="text" name="2nd_bat_team" placeholder="2nd bat team"><br/><br/>
+		&nbsp;<select id="ipt11" name="2nd_bat_team">
+			<option value="IND">India</option>
+			<option value="AUS">Australia</option>
+			<option value="ENG">England</option>
+			<option value="NZ">New Zealand</option>
+			<option value="PAK">Pakistan</option>
+			<option value="SA">South Africa</option>
+			<option value="SL">Sri Lanka</option>
+			<option value="WI">West Indies</option>
+			<option value="BAN">Bangladesh</option>
+			<option value="ZIM">Zimbabwe</option>
+			<option value="SC">Scotland</option>
+			<option value="NTH">Netherlands</option>
+			<option value="IR">Ireland</option>
+			<option value="HK">Hong Kong</option>
+			<option value="AFG">Afghanistan</option>
+			<option value="OM">Oman</option>
+		</select><br/><br/>
 		&nbsp;<input id="ipt12" type="number" name="2nd_bat_team_runs" placeholder="2nd bat team runs"><br/><br/>
 		&nbsp;<input id="ipt13" type="number" name="2nd_bat_team_wickets" placeholder="2nd bat team wickets"><br/><br/>
 		&nbsp;<input id="ipt14" type="number" name="2nd_bat_team_overs" placeholder="2nd bat team overs"><br/><br/>

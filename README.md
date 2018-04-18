@@ -22,4 +22,6 @@ Information distributed over space time over a map about a particular event (her
 
 8. To view admin panel, type in chrome- localhost:8080/adm
 
+Technologies used: HTML, Python, jQuery, MongoDB, Leafletjs
+
 *For viewing just the frontend, the link for the same is given in the repository*

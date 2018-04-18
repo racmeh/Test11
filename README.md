@@ -1,6 +1,10 @@
 # Geomap
 
-Launching project:
+- About:
+
+Information distributed over space time over a map about a particular event (here T20 World Cup, 2016)
+
+- Launching project:
 
 1. The github repo must be cloned
 
@@ -17,3 +21,5 @@ Launching project:
 7. To update the database, in chrome, type the url- localhost:8080/refresh (It will be shown as an empty page in Chrome as no template has been defined for it)
 
 8. To view admin panel, type in chrome- localhost:8080/adm
+
+(For viewing just the frontend, the link for the same is given in the repository)

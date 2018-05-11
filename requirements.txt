@@ -1,3 +1,4 @@
+Python==3.6
 Bottle==0.13
 Bottle-Sockets==0.13
 gevent==1.0.2

@@ -11,7 +11,6 @@ import sys
 import traceback
 from weakref import ref as wref
 
-from greenlet import RawGreenlet, getcurrent, GreenletExit
 
 
 __all__ = [

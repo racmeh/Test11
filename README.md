@@ -2,7 +2,7 @@
 
 - About:
 
-Information distributed over space time over a map about a particular event (here T20 World Cup, 2016)
+Information distributed over space time over a map about a particular event (here T20 World Cup, 2016). Also includes signup, login and tracking of users.
 
 - Launching project:
 
